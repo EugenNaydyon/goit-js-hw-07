@@ -1,23 +1,10 @@
-const categoriesEl = document.querySelectorAll(".item");
-console.log(`В списке ${categoriesEl.length} категории`);
+const categoriesListRef = document.querySelector("#categories");
 
-// console.log(document.querySelectorAll("h2"));
+const categoriesListItemRef = categoriesListRef.querySelectorAll(".item");
 
-const navEl = document.querySelector(".ul");
-console.log(navEl);
-
-// const categoriesFirstLi = Array.from(
-//   document.querySelectorAll(".categories > li")
-// );
-// const categoriesUl = Array.from(
-//   document.querySelectorAll(".categories  li ul")
-// );
-// const categoriesList = [];
-// categoriesFirstLi.forEach((element) => {
-//   categoriesList.push(
-//     `Категория: ${element.firstChild.textContent.trim()} / Количество: ${
-//       element.firstElementChild.children.length
-//     }`
-//   );
-// });
-// console.log(categoriesList);
+console.log(`В списке ${categoriesListItemRef.length} категории.`);
+categoriesListItemRef.forEach((category) => {
+  console.log("=========================");
+  console.log("Категория:", category.querySelector("h2").textContent);
+  console.log("Количество элементов:", category.querySelectorAll("li").length);
+});
